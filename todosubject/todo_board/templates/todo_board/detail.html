@@ -1,0 +1,10 @@
+<!--detail.html-->
+
+<h1>제목 : {{onepost.title}}</h1>
+<p>작성 시간 : {{onepost.created_at}}</p>
+<p>내용 : {{onepost.body}}</p>
+<!--detail.html-->
+
+<a href="{% url 'postedit' onepost.id %}">수정</a>
+<a href="{% url 'postdelete' onepost.id %}">삭제</a>
+<a href="{% url 'todo_board' %}">리스트로</a>

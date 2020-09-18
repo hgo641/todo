@@ -83,15 +83,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'todo_app',
-        'USER':'hgo99',
+        'USER':'root',
         'PASSWORD' : 'duwls',
-        'HOST' : '127.0.0.1',
-        'POST' : '3307',
+        'HOST' : 'localhost',
+        'PORT' : '3307',
 
     }
 }
 
-
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 

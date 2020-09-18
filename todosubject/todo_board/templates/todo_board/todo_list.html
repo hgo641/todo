@@ -1,0 +1,16 @@
+{% extends 'todo_main/common/header.html' %}
+{% load static %}
+{% block main %} 
+
+<div class = "alert-info">
+    <strong><h1>스케줄</h1></strong>{{over_end_day}}
+    <a href = "{% url 'postnew' %}">추가하기</a>
+    <br><br>
+    
+    {% for blog in blogs.all%}
+    <div class = "list_grop_item"><input type = "checkbox" name = {{blog.title}} value = {{blog.title}}><a href="{% url 'detail' blog.id %}">{{blog.title}}</a></div>
+    <br>
+    {%endfor%}
+</div>
+{% endblock %}
+<!--home.html-->

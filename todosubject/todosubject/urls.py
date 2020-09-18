@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include,url
+from django.conf.urls import include, url
+import todo_board.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('todo_main.urls')),
-    path('index/',include('todo_main.urls')),
-    path('home/',include('todo_main.urls')),
-    """path('board/',include('todo_board.urls')),"""
+    path('board/',todo_board.views.Todo_board.as_view(), name = 'todo_board'),
+    path('new/',todo_board.views.postnew, name = 'postnew'),
+    path('create/',todo_board.views.postcreate, name='postcreate'),
+    path('detail/<int:post_id>',todo_board.views.detail,name="detail"),
+    path('edit/<int:post_id>',todo_board.views.postedit,name="postedit"),
+    path('postupdate/<int:post_id>',todo_board.views.postupdate,name="postupdate"),
+    path('postdelete/<int:post_id>',todo_board.views.postdelete,name="postdelete"),
 ]
